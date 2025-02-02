@@ -10,7 +10,7 @@ const ImageCollage = () => {
   ];
 
   return (
-    <div className="relative w-full h-[300px] md:h-[500px] lg:h-[700px] flex justify-center items-center">
+    <div className="relative w-full h-[300px] bg-black md:h-[500px] lg:h-[700px] flex justify-center items-center">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img

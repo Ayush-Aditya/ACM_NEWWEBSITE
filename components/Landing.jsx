@@ -6,7 +6,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import AnimatedText from "@/components/animatedTEXT";
 import Gallery from "@/components/gallery";
-const Home = () => {
+const Landing = () => {
   return (
     <div>
       <Navbar />
@@ -43,4 +43,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Landing;
