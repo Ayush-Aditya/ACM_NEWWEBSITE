@@ -8,7 +8,7 @@ import ScrollableMembers from '../components/ScollableMember';
 export default function Event() {
     return (
         <>
-            <div className='bg-black flex flex-col items-center'>
+            <div className='bg-black flex flex-col items-center mt-24'>
                 <div id="events" className="bg-black container flex justify-center animate-fadeIn">
                     <div className="h-full bg-[url('/bg-green.png')] bg-cover bg-center py-12 w-full">
                         <div className="flex items-center pr-2 md:pr-12 xl:pr-36 group hover:scale-105 transition-all duration-300">

@@ -40,7 +40,7 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="navbar absolute w-screen flex items-center z-10 p-4 font-inter bg-transparent"
+      className="navbar absolute w-full  flex items-center z-10 p-4 font-inter bg-transparent"
     >
       {/* Logo */}
       <motion.div
