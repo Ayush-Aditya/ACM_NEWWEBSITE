@@ -52,9 +52,25 @@ export default function AnimatedText() {
               solutions for your business. Scroll down to read about what we can
               do for you.
             </motion.p>
+
+
+            
+
           </div>
         </div>
+        {/* Gallery Section (Moved Down and Styled) */}
+          
       </div>
+      <motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="mt-16 w-full text-left" // Align left for consistent spacing
+>
+  <h1 className="text-5xl md:text-7xl lg:text-9xl font-inter text-white transition-all duration-300 hover:text-shadow-[#ffff] pl-10 md:pl-15 lg:pl-18 tracking-widest"> {/* Added padding and tracking */}
+    GALLERY
+  </h1>
+</motion.div>
     </div>
   );
 }
