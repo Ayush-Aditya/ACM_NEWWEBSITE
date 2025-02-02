@@ -8,13 +8,13 @@ import AnimatedText from "@/components/animatedTEXT";
 import Gallery from "@/components/gallery";
 const Landing = () => {
   return (
-    <div>
+    <div className="bg-black">
       <Navbar />
-      <div
+       <div
         className="relative h-screen bg-cover bg-center flex items-center justify-center max-w-scren"
         style={{ backgroundImage: "url('Top-8-Coding-Platforms-for-Data-Science-Beginner-01-scaled.jpg')" }}
       >
-        {/*this div is for layering bblack on top of bg dont delete it */}
+      
         <div className="absolute inset-0 bg-black opacity-45"></div>
         <img
           src="Group 16.svg"
@@ -24,16 +24,15 @@ const Landing = () => {
         />
       </div>
 
-      {/* THIS IS WHERE THE NEW PAGE STARTS IE THE ANIMATED TEXT SECTION*/}
-
+  
       <div>
         <AnimatedText />
       </div>
       <div>
 
       </div>
-      {/*THIS IS WHERE THE GALLERY STARTS  */}
-      <div>
+      
+      <div className="bg-black">
         <Gallery />
       </div>
     </div>

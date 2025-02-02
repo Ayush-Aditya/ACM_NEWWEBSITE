@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function AnimatedText() {
   return (
-    <div className="bg-black text-white h-screen w-screen flex flex-col items-center justify-center px-8">
+    <div className="bg-black text-white h-screen w-full flex flex-col items-center justify-center px-8">
       <div className="w-full max-w-4xl">
         {/* Section Label */}
         <motion.div

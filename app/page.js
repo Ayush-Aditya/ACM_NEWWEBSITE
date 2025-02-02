@@ -5,8 +5,10 @@ import Landing from "@/components/Landing.jsx";
 export default function Home() {
     return (
         <>
-            <Landing />
-            <Event />
+            <div className="bg-black">
+              <Landing />
+              <Event />
+            </div>
         </>
     );
 }
