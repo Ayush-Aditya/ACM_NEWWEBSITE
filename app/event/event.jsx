@@ -2,30 +2,30 @@ import EventCard from '../components/EventCard';
 import Card from '../components/Card';
 import Profile from '../components/Profile';
 import Footer from '../components/Footer';
+import ScrollableMembers from '../components/ScollableMember';
+
 
 export default function Event() {
     return (
         <>
             <div className='bg-black flex flex-col items-center'>
-                <div id="events" className="bg-black container flex justify-center">
-                    {/* Reduced container height and padding */}
+                <div id="events" className="bg-black container flex justify-center animate-fadeIn">
                     <div className="h-full bg-[url('/bg-green.png')] bg-cover bg-center py-12 w-full">
-                        <div className="flex items-center pr-2 md:pr-12 xl:pr-36">
-                            <div className="h-[0.08rem] flex-grow bg-gradient-to-r from-transparent to-white/80 " />
+                        <div className="flex items-center pr-2 md:pr-12 xl:pr-36 group hover:scale-105 transition-all duration-300">
+                            <div className="h-[0.08rem] flex-grow bg-gradient-to-r from-transparent to-white/80 group-hover:to-[#31D7B9]/80 transition-all duration-500" />
                             <div className="text-sm sm:text-xl text-center flex gap-2">
-                                <div className="text-[#31D7B9] pl-1 sm:pl-4">03</div>
+                                <div className="text-[#31D7B9] pl-1 sm:pl-4 hover:scale-110 transition-transform duration-300">03</div>
                                 <div className="text-[#31D7B9]">|</div>
-                                <div className="text-[#C6C6C6]">OUR EVENTS</div>
+                                <div className="text-[#C6C6C6] hover:text-[#31D7B9] transition-colors duration-300">OUR EVENTS</div>
                             </div>
                         </div>
-                        <div className="flex mt-8 justify-end w-full items-center pr-2 md:pr-12 xl:pr-36">
-                            <h1 className="text-[#00FFF2] text-lg sm:text-4xl font-bold">EVENTS</h1>
-                            <div className="bg-[url('/box-icon.png')] w-12 h-12 md:w-24 md:h-24 bg-cover"></div>
+                        <div className="flex mt-8 justify-end w-full items-center pr-2 md:pr-12 xl:pr-36 group">
+                            <h1 className="text-[#00FFF2] text-lg sm:text-4xl font-bold group-hover:scale-105 transition-transform duration-300">EVENTS</h1>
+                            <div className="bg-[url('/box-icon.png')] w-12 h-12 md:w-24 md:h-24 bg-cover group-hover:rotate-12 transition-transform duration-500"></div>
                         </div>
                         <div className="flex flex-col items-center gap-y-0 m-4"></div>
-                        {/* Reduced top margin and ensured no extra gap between grid rows */}
                         <div className="flex flex-col items-center gap-y-0 m-4">
-                            <h4 className="text-white place-self-end font-light text-sm sm:text-xl text-right md:text-end leading-tight mb-8 md:mb-0 pr-6 sm:pr-12 md:pr-24 lg:pr-72">
+                            <h4 className="text-white place-self-end font-light text-sm sm:text-xl text-right md:text-end leading-tight mb-8 md:mb-0 pr-6 sm:pr-12 md:pr-24 lg:pr-72 hover:-translate-y-1 transition-transform duration-300 opacity-80 hover:opacity-100">
                                 Instead of focusing just on the problem, we <br />take the holistic approach so we can build  <br /> a solution that works end to end.
                             </h4>
                             <EventCard
@@ -52,16 +52,15 @@ export default function Event() {
                                 imageSrc={'/codezilla.png'}
                                 number={4}
                             />
-                            <div className='mt-32 lg:px-36 flex justify-center items-center container'>
-
-                                <img src="/arrow.png" alt="Left" className='h-4 lg:h-12' />
-                                <div className="relative">
+                            <div className='mt-32 lg:px-36 flex justify-center items-center container group'>
+                                <img src="/arrow.png" alt="Left" className='h-4 lg:h-12 group-hover:-translate-x-4 transition-transform duration-300' />
+                                <div className="relative hover:scale-105 transition-transform duration-500">
                                     <img src="/events.png" alt="Events" className='w-full' />
-                                    <h1 className="absolute text-6xl text-[32px] sm:text-[48px]  md:text-[64px] lg:text-[72px] xl:text-[96px]  top-0 left-6 sm:top-4 lg:top-2 xl:top-2 xl:left-24 2xl:top-8 2xl:left-36 text-white">
+                                    <h1 className="absolute text-6xl text-[32px] sm:text-[48px]  md:text-[64px] lg:text-[72px] xl:text-[96px]  top-0 left-6 sm:top-4 lg:top-2 xl:top-2 xl:left-24 2xl:top-8 2xl:left-36 text-white hover:text-[#31D7B9] transition-colors duration-300">
                                         E V E N T S
                                     </h1>
                                 </div>
-                                <img src="/arrow.png" alt="Right" className='h-4 lg:h-12 scale-x-[-1]' />
+                                <img src="/arrow.png" alt="Right" className='h-4 lg:h-12 scale-x-[-1] group-hover:translate-x-4 transition-transform duration-300' />
                             </div>
                         </div>
                     </div>
@@ -111,7 +110,8 @@ export default function Event() {
                             />
                         </div>
                     </div>
-                    <div className='flex justify-center items-center mt-36 mb-12 group'>
+                    <ScrollableMembers/>
+                    {/* <div className='flex justify-center items-center mt-36 mb-12 group'>
                         <img src="/arrow.png" className='h-4 lg:h-12 group-hover:-translate-x-2 transition-transform duration-300' />
                         <div className="flex flex-col w-[80px] md:w-[120px] lg:w-[300px] 2xl:w-[374px]">
                             <div className="h-[120px] md:h-[160px] lg:h-[260px] 2xl:h-[389px] border-t border-b border-l border-[#C1C1C1] bg-[#0D0D0D]"></div>
@@ -130,8 +130,8 @@ export default function Event() {
                             <div className="h-[120px] md:h-[160px] lg:h-[260px] 2xl:h-[389px] border-t border-b border-r border-[#C1C1C1] bg-[#0D0D0D]"></div>
                         </div>
                         <img src="/arrow.png" className='h-4 lg:h-12 scale-x-[-1] group-hover:translate-x-2 transition-transform duration-300' />
-                    </div>
-
+                    </div> */}
+                    Scroll
                     <div className="p-8 rounded-lg shadow mb-8 bg-gradient-to-b from-[#0c0c0c] to-[#0b0022] hover:shadow-2xl transition-all duration-300">
                         <p className="text-3xl font-bold text-center text-gray-800 dark:text-white hover:scale-105 transition-transform duration-300">
                             The Team
@@ -186,7 +186,6 @@ export default function Event() {
                         </span>
                     </h1>
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                        {/* Form Section */}
                         <div className="flex-1 w-full md:w-1/2">
                             <div className="mt-8 space-y-4 w-full">
                                 <div className="relative">
@@ -234,7 +233,6 @@ export default function Event() {
                                 Submit Now
                             </button>
                         </div>
-                        {/* Image Section */}
                         <div className="flex-1 w-full md:w-1/2">
                             <div className="relative h-[420px] w-full">
                                 <img 
