@@ -11,6 +11,7 @@
   "dependencies": {
     "acmweb": "file:",
     "framer-motion": "^12.0.6",
+    "lucide-react": "^0.474.0",
     "next": "15.1.6",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

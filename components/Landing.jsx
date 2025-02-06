@@ -20,8 +20,11 @@ const Landing = () => {
           src="Group 16.svg"
           alt="Right Image"
           id="P1R"
-          className="absolute right-5 md:right-10 lg:right-16 xl:right-20 top-1/2 transform -translate-y-1/3 w-auto h-auto max-w-[55%] md:max-w-[50%] lg:max-w-[55%] xl:max-w-[55%] rounded-lg shadow-lg"
-        />
+          className="absolute right-5 md:right-10 lg:right-16 xl:right-20 
+          top-1/2 transform -translate-y-1/3 
+          w-auto h-auto 
+          max-w-[90%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] xl:max-w-[40%] 
+          rounded-lg shadow-lg"        />
       </div>
 
   
