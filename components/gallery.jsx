@@ -44,7 +44,7 @@ const gridLayout = [
 
 const Collage = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-black">
+    <div className="w-full aspect-video flex items-center justify-center bg-black">
       <motion.div
         className="grid grid-cols-6 grid-rows-4 gap-2 p-2 w-[80%] h-[80%]"
         initial={{ opacity: 0, scale: 0.8 }}

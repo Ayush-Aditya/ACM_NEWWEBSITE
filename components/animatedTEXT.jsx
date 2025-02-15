@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function AnimatedText() {
   return (
-    <div className="bg-black text-white h-screen w-full flex flex-col items-center justify-center px-8">
+    <div className="bg-black text-white w-full flex flex-col items-center justify-center px-8 py-16">
       <div className="w-full max-w-4xl">
         {/* Section Label */}
         <motion.div
@@ -13,12 +13,12 @@ export default function AnimatedText() {
           01 | WHO WE ARE
         </motion.div>
 
-        <div className="flex items-start">
+        <div className="flex flex-col md:flex-row items-start">
           {/* Icon */}
           <motion.div
             whileHover={{ scale: 1.2, rotate: 15 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="mr-4"
+            className="mr-4 mb-4 md:mb-0"
           >
             <div className="bg-purple-500 text-black rounded-full w-12 h-12 flex items-center justify-center cursor-pointer">
               <span className="text-2xl">📦</span>
@@ -30,7 +30,7 @@ export default function AnimatedText() {
             <motion.h1
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-4xl font-bold leading-tight mb-4 cursor-pointer"
+              className="text-3xl md:text-4xl font-bold leading-tight mb-4 cursor-pointer"
             >
               We are a{" "}
               <motion.span
@@ -52,25 +52,21 @@ export default function AnimatedText() {
               solutions for your business. Scroll down to read about what we can
               do for you.
             </motion.p>
-
-
-            
-
           </div>
         </div>
-        {/* Gallery Section (Moved Down and Styled) */}
-          
       </div>
+
+      {/* Gallery Section */}
       <motion.div
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: 0.2 }}
-  className="mt-16 w-full text-left" // Align left for consistent spacing
->
-  <h1 className="text-5xl md:text-7xl lg:text-9xl font-inter text-white transition-all duration-300 hover:text-shadow-[#ffff] pl-10 md:pl-15 lg:pl-18 tracking-widest"> {/* Added padding and tracking */}
-    GALLERY
-  </h1>
-</motion.div>
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-12 w-full text-center" // Adjusted margin & centered
+      >
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-inter text-white transition-all duration-300 hover:text-shadow-[#ffff] tracking-widest">
+          GALLERY
+        </h1>
+      </motion.div>
     </div>
   );
 }

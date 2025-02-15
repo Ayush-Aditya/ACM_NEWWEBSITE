@@ -43,7 +43,7 @@ const Navbar = () => {
       </motion.div>
 
       {/* Desktop Nav Links */}
-      <ul className="hidden md:flex space-x-8">
+      <ul className="hidden md:flex space-x-16">
         {["Home", "About Us", "Events", "Hack-A-Bit", "Contact"].map((link, index) => (
           <motion.li
             key={index}
