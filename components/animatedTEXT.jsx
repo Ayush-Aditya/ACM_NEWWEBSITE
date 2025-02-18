@@ -2,75 +2,70 @@ import { motion } from "framer-motion";
 
 export default function AnimatedText() {
   return (
-    <div className="bg-black text-white h-screen w-full flex flex-col items-center justify-center px-8">
-      <div className="w-full max-w-4xl">
-        {/* Section Label */}
+    <div className="bg-black text-white min-h-screen w-full flex flex-col items-start justify-center px-8 md:px-16 lg:px-24 relative">
+      {/* Section Label */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-[#8B5CF6] font-medium text-sm tracking-wide mb-6"
+      >
+        <div className="flex items-center pr-2 md:pr-12 xl:pr-36 hover:scale-105 transition-all duration-300 mb-8">
+          <div className="text-sm sm:text-xl text-center flex gap-2">
+            <div className="text-[#E64467] pr-1 sm:pr-4">01</div>
+            <div className="text-[#E64467]">|</div>
+            <div className="text-[#C6C6C6]">WHO WE ARE</div>
+          </div>
+          <div className="h-[0.08rem] flex-grow bg-gradient-to-r from-transparent to-white/80 " />
+        </div>
+      </motion.div>
+
+      <div className="flex flex-col lg:flex-row items-start gap-12 relative z-10">
+        {/* Left Content */}
         <motion.div
-          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-purple-500 font-medium text-sm tracking-wide mb-2 cursor-pointer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="lg:w-2/3"
         >
-          01 | WHO WE ARE
+          <div className="flex">
+            <div className="bg-[url('/p2logo.png')] w-20 h-20 bg-cover group-hover:rotate-12 transition-transform duration-500"/>
+            <div className="flex flex-col hover:-translate-y-1 transition-transform duration-300">
+              <div className="ml-4">
+                <motion.h1 className="text-4xl font-bold text-purple-400 bg-clip-text">
+                  ABOUT US
+                </motion.h1>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            The ACM Student Chapter at BIT Mesra, the institute's most reputed tech club,
+            fosters a culture of excellence by providing a platform for students to develop
+            skills, explore innovations, and engage in collaborative projects through workshops,
+            seminars, and hackathons. It brings together passionate learners, promotes peer
+            learning, and empowers members to be at the forefront of technological progress.
+          </p>
         </motion.div>
 
-        <div className="flex items-start">
-          {/* Icon */}
-          <motion.div
-            whileHover={{ scale: 1.2, rotate: 15 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="mr-4"
-          >
-            <div className="bg-purple-500 text-black rounded-full w-12 h-12 flex items-center justify-center cursor-pointer">
-              <span className="text-2xl">📦</span>
-            </div>
-          </motion.div>
-
-          {/* Text Content */}
-          <div>
-            <motion.h1
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-4xl font-bold leading-tight mb-4 cursor-pointer"
-            >
-              We are a{" "}
-              <motion.span
-                whileHover={{ color: "#8b5cf6", scale: 1.2 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-purple-500 cursor-pointer"
-              >
-                group of experts
-              </motion.span>{" "}
-              looking to help companies leverage technology to do more than they
-              had ever thought possible.
-            </motion.h1>
-            <motion.p
-              whileHover={{ color: "#ffffff", scale: 1.05 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-gray-400 text-base cursor-pointer"
-            >
-              We do this through a number of services to provide comprehensive
-              solutions for your business. Scroll down to read about what we can
-              do for you.
-            </motion.p>
-
-
-            
-
-          </div>
-        </div>
-        {/* Gallery Section (Moved Down and Styled) */}
-          
+        {/* ACM Logo Watermark */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.1, scale: 4 }}
+          transition={{ duration: 0.8 }}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-1/2"
+        >
+          <img
+            src="/acm.png"
+            alt="ACM Logo"
+            className="w-full h-full object-contain"
+          />
+        </motion.div>
       </div>
-      <motion.div
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: 0.2 }}
-  className="mt-16 w-full text-left" // Align left for consistent spacing
->
-  <h1 className="text-5xl md:text-7xl lg:text-9xl font-inter text-white transition-all duration-300 hover:text-shadow-[#ffff] pl-10 md:pl-15 lg:pl-18 tracking-widest"> {/* Added padding and tracking */}
-    GALLERY
-  </h1>
-</motion.div>
+
+
+      <h1 className="text-5xl md:text-7xl lg:text-9xl font-inter text-white transition-all duration-300 hover:text-shadow-[#ffff] pl-10 md:pl-20 lg:pl-18 tracking-widest mt-40">
+        GALLERY
+      </h1>
     </div>
   );
 }
