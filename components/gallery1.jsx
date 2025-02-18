@@ -3,7 +3,7 @@ import React from 'react';
 const Gallery = () => {
   return (
     <div className="bg-black py-12 px-6 md:px-12 lg:px-24">
-      <h2 className="text-white text-3xl font-bold mb-8 text-center">Gallery</h2>
+       <h2 className="text-white text-3xl font-bold mb-8 text-center">Gallery</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Image 1 (Tall - spans 2 rows) */}
         <div className="md:col-span-1 lg:col-span-2 relative h-48 md:h-64 lg:h-96"> {/* Fixed height */}

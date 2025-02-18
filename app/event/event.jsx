@@ -1,11 +1,45 @@
+'use client';
 import EventCard from '../components/EventCard';
 import Card from '../components/Card';
 import Profile from '../components/Profile';
 import Footer from '../components/Footer';
 import ScrollableMembers from '../components/ScollableMember';
-
+import AlumniScroll from '@/components/AlumniScroll';
+import { useState } from 'react';
 
 export default function Event() {
+    const [currentEventIndex, setCurrentEventIndex] = useState(0);
+    const events = [
+        {
+            title: "E V E N T S",
+            image: "/events.png"
+        },
+        {
+            title: "",
+            image: "/logic-lounge.png"
+        },
+        {
+            title: "",
+            image: "/hack-a-bit.png"
+        },
+        {
+            title: "",
+            image: "/cqm.png"
+        },
+        {
+            title: "",
+            image: "/codezilla.png"
+        }
+    ];
+
+    const nextEvent = () => {
+        setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    };
+
+    const prevEvent = () => {
+        setCurrentEventIndex((prev) => (prev - 1 + events.length) % events.length);
+    };
+
     return (
         <>
             <div className='bg-black flex flex-col items-center mt-24'>
@@ -53,14 +87,38 @@ export default function Event() {
                                 number={4}
                             />
                             <div className='mt-32 lg:px-36 flex justify-center items-center container group'>
-                                <img src="/arrow.png" alt="Left" className='h-4 lg:h-12 group-hover:-translate-x-4 transition-transform duration-300' />
+                                <button 
+                                    onClick={prevEvent}
+                                    className='cursor-pointer hover:opacity-75 transition-opacity focus:outline-none'
+                                    aria-label="Previous event"
+                                >
+                                    <img 
+                                        src="/arrow.png" 
+                                        alt="Previous" 
+                                        className='h-4 lg:h-12 group-hover:-translate-x-4 transition-transform duration-300' 
+                                    />
+                                </button>
                                 <div className="relative hover:scale-105 transition-transform duration-500">
-                                    <img src="/events.png" alt="Events" className='w-full' />
-                                    <h1 className="absolute text-6xl text-[32px] sm:text-[48px]  md:text-[64px] lg:text-[72px] xl:text-[96px]  top-0 left-6 sm:top-4 lg:top-2 xl:top-2 xl:left-24 2xl:top-8 2xl:left-36 text-white hover:text-[#31D7B9] transition-colors duration-300">
-                                        E V E N T S
+                                    <img 
+                                        src={events[currentEventIndex].image} 
+                                        alt={events[currentEventIndex].title} 
+                                        className='w-full transition-opacity duration-500' 
+                                    />
+                                    <h1 className="absolute text-6xl text-[32px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[96px] top-0 left-6 sm:top-4 lg:top-2 xl:top-2 xl:left-24 2xl:top-8 2xl:left-36 text-white hover:text-[#31D7B9] transition-colors duration-300">
+                                        {events[currentEventIndex].title}
                                     </h1>
                                 </div>
-                                <img src="/arrow.png" alt="Right" className='h-4 lg:h-12 scale-x-[-1] group-hover:translate-x-4 transition-transform duration-300' />
+                                <button 
+                                    onClick={nextEvent}
+                                    className='cursor-pointer hover:opacity-75 transition-opacity focus:outline-none'
+                                    aria-label="Next event"
+                                >
+                                    <img 
+                                        src="/arrow.png" 
+                                        alt="Next" 
+                                        className='h-4 lg:h-12 scale-x-[-1] group-hover:translate-x-4 transition-transform duration-300' 
+                                    />
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -110,7 +168,10 @@ export default function Event() {
                             />
                         </div>
                     </div>
-                    <ScrollableMembers/>
+                    <>
+                        <ScrollableMembers/>
+                        <AlumniScroll />
+                    </> 
                     {/* <div className='flex justify-center items-center mt-36 mb-12 group'>
                         <img src="/arrow.png" className='h-4 lg:h-12 group-hover:-translate-x-2 transition-transform duration-300' />
                         <div className="flex flex-col w-[80px] md:w-[120px] lg:w-[300px] 2xl:w-[374px]">
@@ -131,53 +192,38 @@ export default function Event() {
                         </div>
                         <img src="/arrow.png" className='h-4 lg:h-12 scale-x-[-1] group-hover:translate-x-2 transition-transform duration-300' />
                     </div> */}
-                    Scroll
+                    
                     <div className="p-8 rounded-lg shadow mb-8 bg-gradient-to-b from-[#0c0c0c] to-[#0b0022] hover:shadow-2xl transition-all duration-300">
-                        <p className="text-3xl font-bold text-center text-gray-800 dark:text-white hover:scale-105 transition-transform duration-300">
-                            The Team
-                        </p>
-                        <p className="mb-12 text-xl font-normal text-center text-gray-500 dark:text-gray-300 hover:text-gray-200 transition-colors duration-300">
+                            <p className="text-3xl font-bold text-center text-gray-800 dark:text-white hover:scale-105 transition-transform duration-300">
+                             The Team
+                            </p>
+                            <p className="mb-12 text-xl font-normal text-center text-gray-500 dark:text-gray-300 hover:text-gray-200 transition-colors duration-300">
                             Meet the best team in the world
-                        </p>
-                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 animate-fadeIn">
-                            <div className="hover:-translate-y-2 transition-transform duration-300">
-                                <Profile />
+                            </p>
+                            <div className="relative overflow-hidden w-full py-4">
+                            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0c0c0c] to-transparent z-10"></div>
+                            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0c0c0c] to-transparent z-10"></div>
+    
+                            <div className="flex overflow-x-auto scrollbar-hide animate-carousel">
+                                <div className="flex gap-6 animate-scroll py-2">
+                                {[...Array(2)].map((_, setIndex) => (
+                                    <div key={setIndex} className="flex gap-6">
+                                        {[...Array(12)].map((_, index) => (
+                                            <div
+                            key={`${setIndex}-${index}`}
+                            className="flex-shrink-0 w-48 hover:-translate-y-2 hover:scale-105 transition-all duration-300"
+                            style={{ animationDelay: `${index * 100}ms` }}
+                            >
+                            <Profile />
+                                    </div>
+                                ))}
                             </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-100">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-200">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-300">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-400">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-500">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-600">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-700">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-800">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-900">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-1000">
-                                <Profile />
-                            </div>
-                            <div className="hover:-translate-y-2 transition-transform duration-300 delay-1100">
-                                <Profile />
-                            </div>
+                            ))}
                         </div>
                     </div>
+                </div>
+            </div>
+
                 </div>
                 <div id="contact-us" className='container bg-black text-white px-4 md:px-16 lg:px-36 w-full h-full mt-16'>
                     <h1 className='text-4xl md:text-6xl font-bold mb-12'>Get in Touch with our
