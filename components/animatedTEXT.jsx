@@ -8,20 +8,22 @@ export default function AnimatedText() {
         <motion.div
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-purple-500 font-medium text-sm tracking-wide mb-2 cursor-pointer"
+          className="text-purple-500 font-medium text-4xl tracking-wide mb-2 cursor-pointer"
         >
           01 | WHO WE ARE
+          
+          
         </motion.div>
 
-        <div className="flex flex-col md:flex-row items-start">
+        <div className="flex flex-col md:flex-row pt-4 items-start">
           {/* Icon */}
           <motion.div
             whileHover={{ scale: 1.2, rotate: 15 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="mr-4 mb-4 md:mb-0"
           >
-            <div className="bg-purple-500 text-black rounded-full w-12 h-12 flex items-center justify-center cursor-pointer">
-              <span className="text-2xl">📦</span>
+            <div className="bg-purple-500 text-black rounded-full w-12 h-12  flex items-center justify-center cursor-pointer">
+              <span className="text-2xl ">📦</span>
             </div>
           </motion.div>
 
@@ -30,27 +32,26 @@ export default function AnimatedText() {
             <motion.h1
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-3xl md:text-4xl font-bold leading-tight mb-4 cursor-pointer"
+              className="text-2xl md:text-2xl pt-4 font-bold leading-tight mb-4 cursor-pointer"
             >
-              We are a{" "}
+              We are {" "}
               <motion.span
                 whileHover={{ color: "#8b5cf6", scale: 1.2 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="text-purple-500 cursor-pointer"
               >
-                group of experts
+                ACM BIT Mesra
               </motion.span>{" "}
-              looking to help companies leverage technology to do more than they
-              had ever thought possible.
+              the official student chapter of the Association for Computing Machinery (ACM) at Birla Institute of Technology, Mesra. We are a dynamic community of tech enthusiasts, coders, researchers, and problem solvers who are passionate about computer science, innovation, and open-source contributions.
             </motion.h1>
             <motion.p
               whileHover={{ color: "#ffffff", scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-gray-400 text-base cursor-pointer"
+              className="text-gray-400 pt-6 text-base cursor-pointer"
             >
-              We do this through a number of services to provide comprehensive
-              solutions for your business. Scroll down to read about what we can
-              do for you.
+              At ACM BIT Mesra, we strive to foster a culture of learning, collaboration, and excellence by organizing coding contests, hackathons, workshops, and speaker sessions. Our members actively engage in competitive programming, artificial intelligence, software development, cybersecurity, and research—pushing the boundaries of technology and innovation.
+
+              We believe in knowledge sharing and mentorship, helping students develop technical skills, explore cutting-edge technologies, and prepare for careers in academia and the industry. Whether you're a beginner or an expert, ACM BIT Mesra provides the perfect platform to learn, build, and innovate alongside like-minded peers.
             </motion.p>
           </div>
         </div>

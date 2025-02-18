@@ -1,52 +1,51 @@
 import React from 'react';
 
-const Gallery = () => {
+const ImageCollage = () => {
+  const svgUrl = '/Group 45.svg'; // Ensure correct path
+  const imageUrls = [
+    '/Group 16.svg',
+    '/Group 16.svg',
+    '/Group 16.svg',
+    '/Group 16.svg'
+  ];
+
   return (
-    <div className="bg-black py-12 px-6 md:px-12 lg:px-24">
-      <h2 className="text-white text-3xl font-bold mb-8 text-center">Gallery</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Image 1 (Tall - spans 2 rows) */}
-        <div className="md:col-span-1 lg:col-span-2 relative h-48 md:h-64 lg:h-96"> {/* Fixed height */}
-          <img
-            src="Top-8-Coding-Platforms-for-Data-Science-Beginner-01-2048x1151.svg"
-            alt="Gallery Image 1"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition duration-300"></div>
-        </div>
+    <div className="relative w-full h-[300px] bg-black md:h-[500px] lg:h-[700px] flex justify-center items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={svgUrl}
+          alt="Collage Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-        {/* Image 2 (Small) */}
-        <div className="relative h-48 md:h-64 lg:h-96"> {/* Fixed height */}
-          <img
-            src="Top-8-Coding-Platforms-for-Data-Science-Beginner-01-2048x1151.svg"
-            alt="Gallery Image 2"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition duration-300"></div>
-        </div>
+      {/* Image Container */}
+      <div className="relative w-3/5 h-3/5 grid grid-cols-2 grid-rows-4 gap-10 sm:gap-12 md:gap-14">
+        {imageUrls.map((imageUrl, index) => (
+          <div
+            key={index}
+            className={`relative flex items-center justify-center overflow-hidden rounded-lg aspect-square transition-transform duration-300 ease-in-out hover:scale-110 
+              ${index === 0 ? 'row-start-1 col-start-1 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 -translate-x-20 -translate-y-20' : ''} 
+              ${index === 1 ? 'row-start-2 col-start-2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 translate-x-6 -translate-y-28' : ''} 
+              ${index === 2 ? 'row-start-3 col-start-1 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 translate-x-3 translate-y-6' : ''} 
+              ${index === 3 ? 'row-start-4 col-start-2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 -translate-x-2 translate-y-4' : ''}`}
+          >
+            {/* Glowing Border */}
+            <div className="absolute inset-0 rounded-lg border-2 sm:border-3 md:border-4 border-white opacity-90 shadow-[0_0_30px_10px_rgba(255,255,255,1)] animate-pulse"></div>
 
-        {/* Image 3 (Medium - spans 2 columns) */}
-        <div className="relative md:col-span-1 lg:col-span-2 h-48 md:h-64 lg:h-96"> {/* Fixed height */}
-          <img
-            src="Top-8-Coding-Platforms-for-Data-Science-Beginner-01-2048x1151.svg"
-            alt="Gallery Image 3"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition duration-300"></div>
-        </div>
-
-        {/* Image 4 (Small) */}
-        <div className="relative h-48 md:h-64 lg:h-96"> {/* Fixed height */}
-          <img
-            src="Top-8-Coding-Platforms-for-Data-Science-Beginner-01-2048x1151.svg"
-            alt="Gallery Image 4"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition duration-300"></div>
-        </div>
+            {/* Image */}
+            <img
+              src={imageUrl}
+              alt={`Collage Image ${index + 1}`}
+              className="w-full h-full object-cover rounded-lg"
+              role="img"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default ImageCollage;

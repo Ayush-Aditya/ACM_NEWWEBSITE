@@ -16,7 +16,7 @@ const Landing = () => {
       >
         {/* Background Image Based on Screen Size */}
         <div 
-          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-500  before:absolute before:bottom-0 before:left-0 before:w-full before:h-4 before:bg-gradient-to-t before:from-black before:to-transparent"
           style={{ 
             backgroundImage: "url('landingback.svg')" 
           }}
