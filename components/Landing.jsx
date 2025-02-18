@@ -24,7 +24,7 @@ const Landing = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center transition-all duration-500 md:hidden before:absolute before:bottom-0 before:left-0 before:w-full before:h-4 before:bg-gradient-to-t before:from-black before:to-transparent"
           style={{ 
-            backgroundImage: "url('try4.webp')" 
+            backgroundImage: "url('IMG_20250218_154844.jpg')" 
           }}
         ></div>
         
