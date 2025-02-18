@@ -32,18 +32,21 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent  backdrop-blur-md px-6 py-4 flex justify-between items-center w-full"
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md px-4 py-4 flex justify-between items-center w-full"
     >
-      {/* Logo */}
+      {/* Logo (Fixed Size to Prevent Jitter) */}
       <motion.div
-        whileHover={{ scale: 1.1, rotate: 3 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="h-12 w-36 flex-shrink-0"
       >
-        <img src="logo.png" alt="Logo" className="h-10 cursor-pointer" />
+        <img
+          src="ACM students chapter light.png"
+          alt="Logo"
+          className="h-full w-full object-contain"
+        />
       </motion.div>
 
       {/* Desktop Nav Links */}
-      <ul className="hidden md:flex space-x-16">
+      <ul className="hidden md:flex space-x-8 lg:space-x-20 font-inter text-xl text-semibold ">
         {["Home", "About Us", "Events", "Hack-A-Bit", "Contact"].map((link, index) => (
           <motion.li
             key={index}
@@ -84,7 +87,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 w-full bg-black bg-opacity-90 flex flex-col items-center py-6 space-y-4 md:hidden"
+            className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col items-center py-6 space-y-4 md:hidden z-50"
           >
             {["Home", "About Us", "Events", "Contact", "Blog"].map((link, index) => (
               <motion.a
