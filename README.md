@@ -76,7 +76,7 @@ This project is licensed under the MIT License.
 For any queries or suggestions, feel free to reach out:
 
 - **GitHub**: [Ayush-Aditya](https://github.com/Ayush-Aditya)
-- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/ayush-aditya-link-kedin/)
+- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/ayush-aditya-dev/)
 
 ⭐ If you like this project, don't forget to give it a star!
 
