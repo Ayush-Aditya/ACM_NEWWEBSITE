@@ -1,17 +1,17 @@
 # ACM BIT Mesra Website
 
 ![ACM BIT Mesra](https://your-image-link.com)  
-Official website for ACM BIT Mesra, built using **Next.js**, **React**, and various modern JavaScript libraries with smooth animations and an optimized user experience.
+Official website for ACM BIT Mesra, built using **Next.js**, **React**, and various modern JavaScript libraries with smooth animations and an optimised user experience.
 
 🔗 **Live Demo:** [ACM BIT Mesra Website](https://acm-newwebsite-ff2dq8sla-ayush-adityas-projects.vercel.app)
 
 ## 🚀 Features
 - **Next.js & React**: Fast and scalable frontend framework
 - **Animations**: Engaging UI animations using Framer Motion and CSS transitions
-- **Optimized Performance**: Lazy loading, image optimization, and efficient rendering
+- **Optimised Performance**: Lazy loading, image optimisation, and efficient rendering
 - **Responsive Design**: Mobile-friendly and adaptable UI for all devices
 - **Dark Mode**: Supports both light and dark themes
-- **SEO Optimized**: Better search engine rankings with meta tags and structured data
+- **SEO Optimised**: Better search engine rankings with meta tags and structured data
 - **Interactive Components**: Dynamic content and user-friendly UI/UX
 
 ## 🛠️ Technologies Used
@@ -74,9 +74,9 @@ This project is licensed under the MIT License.
 
 ## 📞 Contact
 For any queries or suggestions, feel free to reach out:
-- **Email**: your.email@example.com
+
 - **GitHub**: [Ayush-Aditya](https://github.com/Ayush-Aditya)
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/your-profile)
+- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/ayush-aditya-link-kedin/)
 
 ⭐ If you like this project, don't forget to give it a star!
 
